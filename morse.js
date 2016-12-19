@@ -30,10 +30,6 @@ var letters = [
 ];
 
 function morse(remainder, word) {
-  if (remainder.length == 0) {
-    console.log(word);
-  }
-
   var start = false;
   try {
     dictionary.forEach((dict) => {
@@ -45,6 +41,10 @@ function morse(remainder, word) {
   } catch (e) {}
   if (!start) {
     return;     // Can't be this word
+  }
+
+  if (remainder.length == 0) {
+    console.log(word);
   }
 
   letters.forEach((item) => {
